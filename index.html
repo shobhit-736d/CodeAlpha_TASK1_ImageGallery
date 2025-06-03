@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Image Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icon/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="logo-container text-center mb-4">
+        <img src="icon/logo.png" alt="Logo" class="gallery-logo">
+        <h1 class="gallery-title">Image Store</h1>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-6">
+                <input type="text" id="search-input" class="form-control search-bar" placeholder="Search images...">
+            </div>
+        </div>
+
+        <div class="row mt-5" id="filter-buttons">
+            <div class="col-12">
+                <button class="btn mb-2 me-1 active" data-filter="all">Show all</button>
+                <button class="btn mb-2 mx-1" data-filter="nature">Nature</button>
+                <button class="btn mb-2 mx-1" data-filter="cars">Cars</button>
+                <button class="btn mb-2 mx-1" data-filter="animal">Animals</button>
+                <button class="btn mb-2 mx-1" data-filter="birds">Birds</button>
+            </div>
+        </div>
+        <div class="row px-2 mt-4 gap-3" id="filterable-cards">
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/mountains.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Mountains</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/lights.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Lights</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/beach.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Beach</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/drought.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Drought</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/night_view.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Night View</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/pebels.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Pebels</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/plant.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Plant</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/sunset.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Sunset</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/tree.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Tree</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="nature">
+                <img src="images/nature/village.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Village</h6>
+                </div>
+            </div>
+
+            <div class="card p-0" data-name="cars">
+                <img src="images/cars/range rover.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Range Rover</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="cars">
+                <img src="images/cars/defender.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Defender</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="cars">
+                <img src="images/cars/mercedes.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Mercedes</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="cars">
+                <img src="images/cars/rolls royce.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Rolls Royce</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="cars">
+                <img src="images/cars/rubicon.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Rubicon</h6>
+                </div>
+            </div>
+
+            <div class="card p-0" data-name="animal">
+                <img src="images/animals/elephant.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Elephant</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="animal">
+                <img src="images/animals/puppies.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Puppies</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="animal">
+                <img src="images/animals/whale.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Whale</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="animal">
+                <img src="images/animals/cats.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Cats</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="animal">
+                <img src="images/animals/shark.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Shark</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="animal">
+                <img src="images/animals/tigers.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Tigers</h6>
+                </div>
+            </div>
+
+            <div class="card p-0" data-name="birds">
+                <img src="images/birds/eagle.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Eagle</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="birds">
+                <img src="images/birds/parrots.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Parrots</h6>
+                </div>
+            </div>
+            <div class="card p-0" data-name="birds">
+                <img src="images/birds/sparrow.jpg" alt="img">
+                <div class="card-body">
+                    <h6 class="card-title">Sparrow</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button id="load-more" class="btn load-more-btn">Load More</button>
+    </div>
+
+</body>
+
+</html>

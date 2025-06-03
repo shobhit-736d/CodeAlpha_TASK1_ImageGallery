@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+    color: #fff;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+.gallery-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ff6f61;
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease;
+}
+
+
+.search-bar {
+    background: #1f1f1f;
+    border: 2px solid #ff6f61;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 111, 97, 0.2);
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #e94b3c;
+    box-shadow: 0 0 12px rgba(255, 111, 97, 0.4);
+    background: #fff;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+#filter-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#filter-buttons button {
+    background: linear-gradient(135deg, #222, #444);
+    color: #eee;
+    border: none;
+    margin: 5px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+#filter-buttons button:hover,
+#filter-buttons .active {
+    background: linear-gradient(135deg, #ff6f61, #e94b3c);
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.5);
+}
+
+#filterable-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 260px;
+    background: #222;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInCard 0.5s ease forwards;
+    opacity: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(255, 111, 97, 0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-bottom: 2px solid #ff6f61;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.card-body {
+    padding: 18px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #ffdfd3;
+    font-weight: bold;
+}
+
+.card.hide {
+    display: none !important;
+}
+
+@keyframes fadeInCard {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+}
+
+.slide-left {
+    animation: slideLeft 0.5s forwards;
+}
+
+.slide-right {
+    animation: slideRight 0.5s forwards;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.lightbox-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 50px;
+}
+
+.lightbox-controls span {
+    color: #ffdfd3;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.lightbox-controls span:hover {
+    transform: scale(1.3);
+    color: #ff6f61;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+    transition: 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #ff6f61;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    .lightbox-controls {
+        padding: 0 20px;
+    }
+}
+
+.download-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 111, 97, 0.85);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.1rem;
+    line-height: 36px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card:hover .download-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1.05);
+}
+
+.load-more-btn {
+    background: linear-gradient(135deg, #ff6f61, #e94b3c);
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: 0.3s ease-in-out;
+}
+
+.load-more-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #e94b3c, #ff6f61);
+}
